@@ -12,6 +12,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  ListItemButton,
 } from "@mui/material";
 import { GroupAdd, Groups, Person2 } from "@mui/icons-material";
 
@@ -27,6 +28,13 @@ export default function App() {
   const [isShow, setIsShow] = React.useState(false);
   const toggleDrawer = () => {
     setIsShow((isShow) => !isShow);
+  };
+  const clickMenu = (menu: string) => {
+    switch (menu) {
+      case "login":
+        console.log("로그인");
+        break;
+    }
   };
 
   return (
@@ -56,12 +64,12 @@ export default function App() {
             <DrawerHeader>여기 아이콘 자리</DrawerHeader>
             <Divider />
             <List>
-              <ListItem>
+              <ListItemButton onClick={() => clickMenu("login")}>
                 <ListItemIcon>
                   <Person2 />
                 </ListItemIcon>
                 <ListItemText primary={"로그인"}></ListItemText>
-              </ListItem>
+              </ListItemButton>
             </List>
             <Divider />
             <List>
