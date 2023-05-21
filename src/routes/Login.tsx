@@ -1,8 +1,8 @@
-import { Box, Button, Grid, TextField } from "@mui/material";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 
 export default function Login() {
   return (
-    <>
+    <Grid marginX={3}>
       <Grid container justifyContent="center">
         <Grid item textAlign="center" xs={12}>
           <Box
@@ -21,9 +21,16 @@ export default function Login() {
           먹쉐어
         </Grid>
       </Grid>
-      <Grid container justifyContent="start">
-        <Grid xs={12}>로그인</Grid>
-        <Grid xs={12}>로그인을 해 주세요</Grid>
+      <Grid
+        container
+        justifyContent="start"
+        marginTop={3}
+        sx={{
+          display: "block",
+        }}
+      >
+        <Typography variant="h5">로그인</Typography>
+        <Typography variant="body2">로그인을 해 주세요</Typography>
       </Grid>
       <Grid container justifyContent="center">
         <Box component="form" width="100%" textAlign="center">
@@ -49,9 +56,13 @@ export default function Login() {
         </Box>
       </Grid>
       <Grid container>
-        <Grid xs={6}>비밀번호를 잊으셨나요?</Grid>
-        <Grid xs={6}>회원가입</Grid>
+        <Grid xs={6}>
+          <Typography variant="body2">비밀번호를 잊으셨나요?</Typography>
+        </Grid>
+        <Grid xs={6} textAlign="right">
+          <Typography variant="body2">회원가입</Typography>
+        </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 }
