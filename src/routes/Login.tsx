@@ -1,6 +1,13 @@
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { useHistory } from "react-router-dom";
+import { ROUTE } from "../constants/route";
 
 export default function Login() {
+  const history = useHistory();
+  const handleSignupClick = () => {
+    history.push(ROUTE.SIGNUP);
+  };
+
   return (
     <Grid marginX={3}>
       <Grid container justifyContent="center" mt={5}>
@@ -51,6 +58,7 @@ export default function Login() {
               id="outlined-disabled"
               label="비밀번호"
               fullWidth
+              type="password"
             />
           </Grid>
           <Grid xs={12} mt={3}>
@@ -64,8 +72,13 @@ export default function Login() {
             비밀번호를 잊으셨나요?
           </Typography>
         </Grid>
-        <Grid xs={6} textAlign="right">
-          <Typography variant="body2" color="primary" fontWeight="bold">
+        <Grid xs={6} display="flex" justifyContent="end">
+          <Typography
+            variant="body2"
+            color="primary"
+            fontWeight="bold"
+            onClick={handleSignupClick}
+          >
             회원가입
           </Typography>
         </Grid>
