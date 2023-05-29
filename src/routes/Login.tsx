@@ -44,7 +44,7 @@ export default function Login() {
       </Grid>
       <Grid container justifyContent="center">
         <Box component="form" width="100%" textAlign="center" mt={3}>
-          <Grid xs={12}>
+          <Grid xs={12} item={true}>
             <TextField
               required
               id="outlined-disabled"
@@ -52,7 +52,7 @@ export default function Login() {
               fullWidth
             />
           </Grid>
-          <Grid xs={12} mt={2}>
+          <Grid xs={12} mt={2} item={true}>
             <TextField
               required
               id="outlined-disabled"
@@ -61,18 +61,18 @@ export default function Login() {
               type="password"
             />
           </Grid>
-          <Grid xs={12} mt={3}>
+          <Grid xs={12} mt={3} item={true}>
             <Button variant="contained">로그인</Button>
           </Grid>
         </Box>
       </Grid>
       <Grid container mt={3}>
-        <Grid xs={6}>
+        <Grid xs={6} item={true}>
           <Typography variant="body2" color="gray">
             비밀번호를 잊으셨나요?
           </Typography>
         </Grid>
-        <Grid xs={6} display="flex" justifyContent="end">
+        <Grid xs={6} item={true} display="flex" justifyContent="end">
           <Typography
             variant="body2"
             color="primary"

@@ -1,6 +1,22 @@
-import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { useHistory } from "react-router-dom";
+import { ROUTE } from "../constants/route";
 
 export default function SignUp() {
+  const history = useHistory();
+
+  const handleLoginClick = () => {
+    history.push(ROUTE.LOGIN);
+  };
+
   return (
     <Grid marginX={3} marginTop={5}>
       <Grid>
@@ -10,7 +26,7 @@ export default function SignUp() {
       </Grid>
       <Grid container justifyContent="center">
         <Box component="form" width="100%" textAlign="center" mt={3}>
-          <Grid xs={12}>
+          <Grid xs={12} item={true}>
             <TextField
               required
               id="outlined-disabled"
@@ -18,7 +34,7 @@ export default function SignUp() {
               fullWidth
             />
           </Grid>
-          <Grid xs={12} mt={2}>
+          <Grid xs={12} mt={2} item={true}>
             <TextField
               required
               id="outlined-disabled"
@@ -27,10 +43,32 @@ export default function SignUp() {
               fullWidth
             />
           </Grid>
-          <Grid xs={12} mt={3}>
+          <Grid xs={12} mt={2} item={true} textAlign="start">
+            <FormControlLabel
+              disabled
+              control={<Checkbox />}
+              label="개인정보 동의?"
+            />
+          </Grid>
+          <Grid xs={12} mt={2} item={true}>
             <Button variant="contained">회원가입</Button>
           </Grid>
         </Box>
+      </Grid>
+      <Grid container mt={3}>
+        <Grid xs={12} item={true} display="flex" justifyContent="center">
+          <Typography variant="body2" color="gray" mr={2}>
+            이미 계정이 있으신가요?
+          </Typography>
+          <Typography
+            variant="body2"
+            color="primary"
+            fontWeight="bold"
+            onClick={handleLoginClick}
+          >
+            로그인
+          </Typography>
+        </Grid>
       </Grid>
     </Grid>
   );
