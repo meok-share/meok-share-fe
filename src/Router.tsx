@@ -4,6 +4,7 @@ import { ROUTE } from "./constants/route";
 import Home from "./routes/Home";
 import Layout from "./components/Layout";
 import SignUp from "./routes/Signup";
+import Teams from "./routes/team/Index";
 
 export default function Router() {
   return (
@@ -19,6 +20,11 @@ export default function Router() {
         </Route>
         <Route path={ROUTE.SIGNUP}>
           <SignUp></SignUp>
+        </Route>
+        <Route path={ROUTE.TEAM_LIST}>
+          <Layout>
+            <Teams />
+          </Layout>
         </Route>
       </Switch>
     </BrowserRouter>
