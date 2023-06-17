@@ -34,7 +34,7 @@ export default function SignUp() {
               fullWidth
             />
           </Grid>
-          <Grid xs={12} item={true}>
+          <Grid xs={12} item={true} mt={2}>
             <TextField
               required
               id="outlined-disabled"
