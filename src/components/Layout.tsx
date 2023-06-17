@@ -39,8 +39,16 @@ export default function Layout({ children }: ComponentProps) {
 
   const handleMenuClick = (menu: string) => {
     switch (menu) {
-      case "login":
+      case ROUTE.LOGIN:
         history.push(ROUTE.LOGIN);
+        break;
+      case ROUTE.TEAM_LIST:
+        history.push(ROUTE.TEAM_LIST);
+        setIsShow(false);
+        break;
+      case ROUTE.TEAM_EDIT:
+        history.push(`${ROUTE.TEAM_EDIT}/0`);
+        setIsShow(false);
         break;
     }
   };
@@ -72,7 +80,7 @@ export default function Layout({ children }: ComponentProps) {
             <DrawerHeader>여기 아이콘 자리</DrawerHeader>
             <Divider />
             <List>
-              <ListItemButton onClick={() => handleMenuClick("login")}>
+              <ListItemButton onClick={() => handleMenuClick(ROUTE.LOGIN)}>
                 <ListItemIcon>
                   <Person2 />
                 </ListItemIcon>
@@ -81,13 +89,13 @@ export default function Layout({ children }: ComponentProps) {
             </List>
             <Divider />
             <List>
-              <ListItem>
+              <ListItem onClick={() => handleMenuClick(ROUTE.TEAM_EDIT)}>
                 <ListItemIcon>
                   <GroupAdd />
                 </ListItemIcon>
                 <ListItemText primary={"파티개설"}></ListItemText>
               </ListItem>
-              <ListItem>
+              <ListItem onClick={() => handleMenuClick(ROUTE.TEAM_LIST)}>
                 <ListItemIcon>
                   <Groups />
                 </ListItemIcon>

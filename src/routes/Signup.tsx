@@ -34,6 +34,14 @@ export default function SignUp() {
               fullWidth
             />
           </Grid>
+          <Grid xs={12} item={true}>
+            <TextField
+              required
+              id="outlined-disabled"
+              label="닉네임"
+              fullWidth
+            />
+          </Grid>
           <Grid xs={12} mt={2} item={true}>
             <TextField
               required
