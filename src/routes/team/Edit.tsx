@@ -1,4 +1,9 @@
 import { Box, Button, Grid, TextField } from "@mui/material";
+import dayjs from "dayjs";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { MobileTimePicker } from "@mui/x-date-pickers/MobileTimePicker";
 
 export default function Edit() {
   return (
@@ -32,7 +37,11 @@ export default function Edit() {
             />
           </Grid>
           <Grid xs={12} item={true}>
-            <TextField required fullWidth label="시간 선택" />
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={["MobileTimePicker"]}>
+                <MobileTimePicker defaultValue={dayjs()} label="시간 선택" />
+              </DemoContainer>
+            </LocalizationProvider>
           </Grid>
           <Grid xs={12} item={true}>
             <TextField
