@@ -67,12 +67,7 @@ export default function Login() {
         </Box>
       </Grid>
       <Grid container mt={3}>
-        <Grid xs={6} item={true}>
-          <Typography variant="body2" color="gray">
-            비밀번호를 잊으셨나요?
-          </Typography>
-        </Grid>
-        <Grid xs={6} item={true} display="flex" justifyContent="end">
+        <Grid xs={12} item={true} display="flex" justifyContent="end">
           <Typography
             variant="body2"
             color="primary"

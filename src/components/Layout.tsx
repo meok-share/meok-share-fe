@@ -46,6 +46,10 @@ export default function Layout({ children }: ComponentProps) {
         history.push(ROUTE.TEAM_LIST);
         setIsShow(false);
         break;
+      case ROUTE.TEAM_EDIT:
+        history.push(`${ROUTE.TEAM_EDIT}/0`);
+        setIsShow(false);
+        break;
     }
   };
 
@@ -85,7 +89,7 @@ export default function Layout({ children }: ComponentProps) {
             </List>
             <Divider />
             <List>
-              <ListItem>
+              <ListItem onClick={() => handleMenuClick(ROUTE.TEAM_EDIT)}>
                 <ListItemIcon>
                   <GroupAdd />
                 </ListItemIcon>

@@ -1,12 +1,20 @@
 import Card from "../../../src/components/Card";
 import { Button, Grid } from "@mui/material";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { ROUTE } from "../../constants/route";
 
 export default function Teams() {
+  const history = useHistory();
+
   return (
     <Container>
       <div style={{ width: "100%", textAlign: "end" }}>
-        <Button variant="outlined" sx={{ mb: 2 }}>
+        <Button
+          variant="outlined"
+          sx={{ mb: 2 }}
+          onClick={() => history.push(`${ROUTE.TEAM_EDIT}/0`)}
+        >
           파티 생성
         </Button>
       </div>
@@ -44,5 +52,5 @@ export default function Teams() {
 }
 
 const Container = styled.div`
-  margin: 20px 10px 20px 10px;
+  margin: 20px 17px;
 `;
